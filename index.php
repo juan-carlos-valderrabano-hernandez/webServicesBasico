@@ -1,4 +1,12 @@
-<?php
+<html>
+    <head>
+    </head>
+    <body>
+    <h1>Web Services Ultra Mega Básico</h1>
+    <hr>
+    <br/>
+    
+    <?php
     $curl = curl_init("http://localhost/WebServicesBasico/datos.txt");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     $respuesta = curl_exec($curl);
@@ -17,4 +25,22 @@
         echo "error: ".curl_error($curl);
     }
 
-?>
+?>      
+<br/>
+
+<br/>
+        
+<br/>
+        <h1>Ejemplo básico de SOAP</h1>
+        <hr/>
+        <br/>
+        <?php
+            require_once "lib/nusoap.php";
+            $cliente = new nusoap_client("http://localhost/WebServicesBasico/webServicesSOAP.php");
+            $planetas = $cliente->call("muestraPlanetas");
+            
+        ?>
+        <h3><?=$planetas ?></h3>
+    </body>
+</html>
+
