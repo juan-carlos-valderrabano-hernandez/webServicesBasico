@@ -6,10 +6,17 @@
                 return $planetas;
             }
 
+            function muestraImagen(){
+                $img='img/planeta.jpg';
+
+                return $img;
+            }
+
             if (!isset($HTTP_RAW_POST_DATA)){
                 $HTTP_RAW_POST_DATA = file_get_contents("php://input");
             }
             $server = new soap_server();
             $server->register("muestraPlanetas");
+            $server->register("muestraImagen");
             $server->service($HTTP_RAW_POST_DATA);
         ?>
