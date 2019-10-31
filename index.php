@@ -38,7 +38,7 @@
             require_once "lib/nusoap.php";
             $cliente = new nusoap_client("http://localhost/WebServicesBasico/webServicesSOAP.php");
             $planetas = $cliente->call("muestraPlanetas");
-            $image = $cliente->call("muestraImagen");
+            $image = $cliente->call("retornarImagen");
 
         ?>
         <h3><?=$planetas?></h3>
