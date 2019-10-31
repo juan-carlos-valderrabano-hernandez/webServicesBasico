@@ -1,0 +1,7 @@
+Ciruela,
+Manzana,
+Pera,
+Papaya,
+Kiwi,
+Naranja,
+Mandarina
